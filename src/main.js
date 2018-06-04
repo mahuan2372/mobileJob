@@ -6,6 +6,8 @@ import router from './router'
 import Vuex from 'vuex'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import mandMobile from 'mand-mobile'
+import 'mand-mobile/lib/mand-mobile.css'
 import './assets/css/base.css'
 import axios from './httpjs.js'
 import store from './store/index.js'
@@ -31,6 +33,7 @@ router.beforeEach((to, from, next) => {
 })
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+Vue.use(mandMobile);
 Vue.component('tableCardList',tableAdmin)//桌位管理
 Vue.component('categoryList',classify)//销售分类
 Vue.component('goodsList',commodityAdmin)//商品管理
