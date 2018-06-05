@@ -1,5 +1,5 @@
 <template>
-<transition name="el-zoom-in-center" mode="out-in">
+<transition name="component-fade" mode="out-in">
   <router-view />
 </transition>
   
@@ -9,17 +9,7 @@
 export default {
   name: "App",
   mounted() {
-    // this.$http
-    //   .post("/order/list", {
-    //     firstName: "Fred",
-    //     lastName: "Flintstone"
-    //   })
-    //   .then(function(response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function(error) {
-    //     console.log(error);
-    //   });
+
   },
   data() {
     return {
@@ -31,8 +21,8 @@ export default {
 
 <style>
 .component-fade-enter-active, .component-fade-leave-active {
-  transition: opacity 1s ease;
-}
+  transition: opacity .3s ease;
+} 
 .component-fade-enter, .component-fade-leave-to
 /* .component-fade-leave-active for below version 2.1.8 */ {
   opacity: 0;

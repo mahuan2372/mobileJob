@@ -1,16 +1,13 @@
 <template>
 <div class="foter">
-    <el-col class="bot" :span="24">
-            <el-menu default-active="" class="el-menu-vertical-demo" @select="handleOpen"
-            background-color="#43536e"
-            text-color="#fff"
-            active-text-color="#fff">
-            <el-menu-item :index="index.toString()" v-for="(item,index) in list" :key="index">
-                <span class="menu-icon" :class="item.iconName"></span>
+        <div class="bot">
+            <div class="bot-li" :index="index.toString()" v-for="(item,index) in list" :key="index">
+                <div class="img" @click="href(item.menuUrl)">
+                     <img :src="require('../../../assets/images/icon-'+item.iconName+'-on.png')" />
+                </div>               
                 <span>{{item.menuNm}}</span>
-            </el-menu-item>
-            </el-menu>
-        </el-col>
+            </div>
+        </div>
 </div>
         
 </template>
@@ -27,10 +24,14 @@ export default {
     },
   },
   data() {
-    return {      
+    return {    
+        
     };
   },
   methods: {
+    href(url){
+      this.$router.push(url)
+    },
     ...mapMutations({
       init: "initdata",
       addd: "add"// 将 `this.add()` 映射为 `this.$store.commit('increment')`
@@ -44,7 +45,16 @@ export default {
 
 <style scoped>
 .bot {
-  flex: 1;
+  overflow:hidden;
+}
+.bot-li{
+  width:33.33%;
+  float: left;
+  box-sizing: border-box;
+  border:1px solid #e2dfdf;
+  text-align: center;
+  padding: 25px 0;
+  background-color: #fff;
 }
 .img {
   height: 66px;
@@ -55,7 +65,7 @@ export default {
   align-items: center;
 }
 .img img{
-  width: 95%;
+  width: 27%;
 }
 .foter {
   display: flex;
