@@ -16,6 +16,9 @@ import logSearch from './view/page/logSearch/logSearch.vue'
 import orderAdmin from './view/page/orderAdmin/orderAdmin.vue'
 import sellCount from './view/page/sellCount/sellCount.vue'
 import editPw from './view/page/editPw/editPw.vue'
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css'
+Vue.use(Mint);
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   if(to.path=='/'){
@@ -31,7 +34,6 @@ router.beforeEach((to, from, next) => {
 })
 Vue.config.productionTip = false
 Vue.use(ElementUI);
-Vue.use(mandMobile);
 Vue.component('tableCardList',tableAdmin)//桌位管理
 Vue.component('categoryList',classify)//销售分类
 Vue.component('goodsList',commodityAdmin)//商品管理

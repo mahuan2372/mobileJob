@@ -1,5 +1,10 @@
 <template>
 <div class="foter">
+  <mt-header title="点餐管理平台">
+    <router-link to="/" slot="left">
+      <mt-button icon="back">返回</mt-button>
+    </router-link>
+  </mt-header>
         <div class="bot">
             <div class="bot-li" :index="index.toString()" v-for="(item,index) in list" :key="index">
                 <div class="img" @click="href(item.menuUrl)">
@@ -53,7 +58,7 @@ export default {
   box-sizing: border-box;
   border:1px solid #e2dfdf;
   text-align: center;
-  padding: 25px 0;
+  padding: 20px 0;
   background-color: #fff;
 }
 .img {
